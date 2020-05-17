@@ -1,0 +1,24 @@
+﻿@model RokibPlusNet.ViewModels.RandomMovieViewModel
+
+@{
+    ViewBag.Title = "AllCustomers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AllCustomers</h2>
+
+@if (Model.Customers == null)
+{
+    <text> There is no Customet </text>
+}
+
+else
+{
+    <ul>
+        @foreach (var customer in Model.Customers)
+        {
+            @*<text> jfeijwei </text>*@
+            <li>@customer.CustomerName</li>
+        }
+    </ul>
+}

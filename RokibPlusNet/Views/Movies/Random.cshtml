@@ -1,0 +1,25 @@
+﻿@model RokibPlusNet.ViewModels.RandomMovieViewModel
+
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{ 
+    var className = Model.Customers.Count > 2 ? "popular" : null;
+}
+    <h2 class="@className">@Model.Movie</h2>
+@if(Model.Customers.Count == 0){
+    
+    <p>No one has rented before this Movies</p>
+}
+else { 
+<ul>
+    @foreach (var customers in Model.Customers)
+    {
+        <li>@customers.CustomerName</li>
+    }
+</ul>
+}
+    
